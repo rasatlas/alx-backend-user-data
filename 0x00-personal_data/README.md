@@ -72,6 +72,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `filtered_logger.py`
+***
 
 ### 1. Log formatter
 
@@ -129,6 +130,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `filtered_logger.py`
+***
 
 ### 2. Create logger
 
@@ -172,6 +174,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `filtered_logger.py`
+***
 
 ### 3. Connect to secure database
 
@@ -239,6 +242,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `filtered_logger.py`
+***
 
 ### 4. Read and filter data
 
@@ -304,6 +308,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `filtered_logger.py`
+***
 
 ### 5. Encrypting passwords
 
@@ -338,6 +343,7 @@ bob@dylan:~$
 - GitHub repository: `alx-backend-user-data`
 - Directory: `0x00-personal_data`
 - File: `encrypt_password.py`
+***
 
 ### 6. Check valid password
 
