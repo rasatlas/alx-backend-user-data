@@ -67,7 +67,11 @@ name=bob;email=bob@dylan.com;password=xxx;date_of_birth=xxx;
 bob@dylan:~$
 ```
 
-**File:** `filtered_logger.py`
+**Repo:**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `filtered_logger.py`
 ***
 
 ### 1. Log formatter
@@ -121,7 +125,11 @@ bob@dylan:~$ ./main.py
 bob@dylan:~$
 ```
 
-**File:** `filtered_logger.py`
+**Repo**:
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `filtered_logger.py`
 ***
 
 ### 2. Create logger
@@ -161,7 +169,11 @@ PII_FIELDS: 5
 bob@dylan:~$
 ```
 
-**File:** `filtered_logger.py`
+**Repo:**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `filtered_logger.py`
 ***
 
 ### 3. Connect to secure database
@@ -225,7 +237,11 @@ bob@dylan:~$ PERSONAL_DATA_DB_USERNAME=root PERSONAL_DATA_DB_PASSWORD=root PERSO
 bob@dylan:~$
 ```
 
-**File:** `filtered_logger.py`
+**Repo**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `filtered_logger.py`
 ***
 
 ### 4. Read and filter data
@@ -287,7 +303,11 @@ bob@dylan:~$ PERSONAL_DATA_DB_USERNAME=root PERSONAL_DATA_DB_PASSWORD=root PERSO
 bob@dylan:~$
 ```
 
-**File:** `filtered_logger.py`
+**Repo:**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `filtered_logger.py`
 ***
 
 ### 5. Encrypting passwords
@@ -318,7 +338,11 @@ b'$2b$12$xSAw.bxfSTAlIBglPMXeL.SJnzme3Gm0E7eOEKOVV2OhqOakyUN5m'
 bob@dylan:~$
 ```
 
-**File:** `encrypt_password.py`
+**Repo:**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `encrypt_password.py`
 ***
 
 ### 6. Check valid password
@@ -354,4 +378,8 @@ True
 bob@dylan:~$
 ```
 
-**File:** `encrypt_password.py`
+**Repo:**
+
+- GitHub repository: `alx-backend-user-data`
+- Directory: `0x00-personal_data`
+- File: `encrypt_password.py`
