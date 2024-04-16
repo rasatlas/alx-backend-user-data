@@ -1,14 +1,13 @@
+#!/usr/bin/env python3
+"""Template for all authentication system."""
 from typing import List, TypeVar
 from flask import request
-
-"""Template for all authentication system."""
 
 
 class Auth:
     """Template for all authentication system."""
 
-    def require_auth(self, path: str,
-                     excluded_paths: List[str]) -> bool:
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Method to check if authentication is required."""
         return False
 
