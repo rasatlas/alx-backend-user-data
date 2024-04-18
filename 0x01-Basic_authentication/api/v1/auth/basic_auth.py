@@ -42,9 +42,9 @@ class BasicAuth(Auth):
            and type(base64_authorization_header) is str):
             try:
                 decoded_bytes = base64.b64decode(
-                    base64_authorization_header.encode("UTF-8")
+                    base64_authorization_header, validate=True
                 )
-                return decoded_bytes
+                return decoded_bytes.decode('UTF-8')
             except (TypeError, base64.binascii.Error):
                 return None
         return None
