@@ -6,8 +6,13 @@ from api.v1.auth.auth import Auth
 class BasicAuth(Auth):
     """Basic Authentication class that inherits from Auth."""
 
-    def extract_base64_authorization_header(self,
-                                            authorization_header: str) -> str:
+    def extract_base64_authorization_header(
+            self,
+            authorization_header: str
+            ) -> str:
+        """Extracts the Base64 part of the Authorization header
+        for a Basic Authentication.
+        """
         if (
             authorization_header
             and type(authorization_header) is str
