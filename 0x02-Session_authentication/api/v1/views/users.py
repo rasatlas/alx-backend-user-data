@@ -30,13 +30,7 @@ def view_one_user(user_id: str = None) -> str:
     user = User.get(user_id)
     if user is None:
         abort(404)
-    # New addition from sessions tasks
-    if user_id == 'me' and request.current_user is None:
-        abort(404)
-    # New addition from session tasks
-    if user_id == 'me' and request.current_user:
-        return jsonify(user.to_json())
-    # return jsonify(user.to_json())
+    return jsonify(user.to_json())
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
