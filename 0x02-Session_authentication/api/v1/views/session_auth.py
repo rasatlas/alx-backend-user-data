@@ -41,3 +41,14 @@ def login():
         session_id
         )
     return response
+
+
+@app_views.route('/auth_session/logout', methods=['DELETE'],
+                 strict_slashes=False)
+def handle_logout():
+    """
+    Handle user logout
+    """
+    if auth.destroy_session(request):
+        return jsonify({}), 200
+    os.abort(404)
