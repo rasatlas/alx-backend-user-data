@@ -2,6 +2,7 @@
 """ Module of Session authentication views
 """
 import os
+from os import abort
 from flask import jsonify, request
 from api.v1 import auth
 from api.v1.views import app_views
@@ -45,4 +46,4 @@ def handle_logout():
     """
     if auth.destroy_session(request):
         return jsonify({}), 200
-    return jsonify({"error": "session not found"}), 404
+    return False, abort(404)
