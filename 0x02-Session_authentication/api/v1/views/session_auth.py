@@ -45,4 +45,4 @@ def handle_logout():
     """
     if auth.destroy_session(request):
         return jsonify({}), 200
-    os.abort(404)
+    return jsonify({"error": "session not found"}), 404
