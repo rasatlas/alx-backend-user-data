@@ -38,8 +38,8 @@ class DB:
         Return:
             User object
         """
-        new_user = User(email=email, hashed_password=password)
+        user = User(email=email, hashed_password=password)
         session = self._session
-        session.add(new_user)
+        session.add(user)
         session.commit()
-        return new_user
+        return user
