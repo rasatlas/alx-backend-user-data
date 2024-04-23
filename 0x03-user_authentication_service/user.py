@@ -10,6 +10,7 @@ Base = declarative_base()
 class User(Base):
     """User model definition"""
     __tablename__: str = 'users'
+
     id: Column = Column(Integer, primary_key=True)
     email: Column = Column(String(250), nullable=False)
     hashed_password: Column = Column(String(250), nullable=False)
