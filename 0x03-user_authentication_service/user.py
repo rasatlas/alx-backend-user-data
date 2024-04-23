@@ -11,7 +11,7 @@ class User(Base):
     """User model definition"""
     __tablename__: str = 'users'
     id: Column = Column(Integer, primary_key=True)
-    email: Column = Column(String, nullable=False)
-    hashed_password: Column = Column(String, nullable=False)
-    session_id: Optional[Column] = Column(String, nullable=True)
-    reset_token: Optional[Column] = Column(String, nullable=True)
+    email: Column = Column(String(250), nullable=False)
+    hashed_password: Column = Column(String(250), nullable=False)
+    session_id: Optional[Column] = Column(String(250), nullable=True)
+    reset_token: Optional[Column] = Column(String(250), nullable=True)
