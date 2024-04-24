@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
+from sqlalchemy.exc import NoResultFound, InvalidRequestError
 
 from user import Base, User
 
@@ -43,3 +44,17 @@ class DB:
         session.add(user)
         session.commit()
         return user
+
+    def find_user_by(self, **kwargs) -> User:
+        """Method that takes in arbitrary keyword arguments and returns
+        the first row found in the users table as filtered by the
+        method’s input arguments.
+        """
+        keys = ['id', 'email', 'hashed_password', 'session_id', 'reset_token']
+        for key in kwargs.keys():
+            if key not in keys:
+                raise InvalidRequestError
+        result = self._session.query(User).filter_by(**kwargs).first()
+        if result is None:
+            raise NoResultFound
+        return result
