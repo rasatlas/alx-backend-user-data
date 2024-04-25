@@ -82,7 +82,7 @@ class Auth:
             - User or None: If the session ID is None or no user is found,
             return None. Otherwise, return the corresponding User object.
         """
-        if session_id:
+        if session_id is not None:
             try:
                 user = self._db.find_user_by(session_id)
                 return user
