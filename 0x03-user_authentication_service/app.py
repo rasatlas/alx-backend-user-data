@@ -43,9 +43,8 @@ def login():
     data = request.form
     email = data.get('email')
     password = data.get('password')
-    if email and password:
+    if AUTH.valid_login(email, password):
         try:
-            AUTH.valid_login(email, password)
             session_id = AUTH.create_session(email=email)
             return jsonify({"email": email, "message": "logged in"})
         except Exception:
