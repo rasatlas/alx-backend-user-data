@@ -102,3 +102,24 @@ class Auth:
             return None
         except Exception:
             return None
+
+    def get_reset_password_token(self, email: str) -> str:
+        """Find the user corresponding to the email.
+        If the user does not exist, raise a ValueError excepton.
+        If it exists, generate a UUID and update the user's reset_token
+        databae field.
+        Args:
+            - email (str): email of the user
+        Returns:
+            - token (str): the generated restet_token
+        """
+        try:
+            user = self._db.find_user_by(email=email)
+            if not user:
+                raise ValueError
+            else:
+                reset_token = _generate_uuid()
+                self._db.update_user(user.id, reset_token=reset_token)
+                return reset_token
+        except Exception:
+            return ValueError
