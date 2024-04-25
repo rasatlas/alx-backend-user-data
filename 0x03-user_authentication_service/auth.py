@@ -113,11 +113,10 @@ class Auth:
         Returns:
             - token (str): the generated restet_token
         """
+        new_token = _generate_uuid()
         try:
             user = self._db.find_user_by(email=email)
-            if user:
-                new_token = _generate_uuid()
-                self._db.update_user(user.id, reset_token=new_token)
-                return new_token
+            self._db.update_user(user.id, reset_token=new_token)
+            return new_token
         except NoResultFound:
             return ValueError
