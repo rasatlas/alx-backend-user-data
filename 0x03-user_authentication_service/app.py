@@ -40,12 +40,13 @@ def login():
     """Creates a new session for the user, stores the session Id as a cookie
     with key 'session_id' on the response and return a JSON paylod to the form.
     """
+    cookie = {}
     data = request.form
     email = data.get('email')
     password = data.get('password')
     if AUTH.valid_login(email, password):
         try:
-            session_id = AUTH.create_session(email=email)
+            cookie['session_id'] = AUTH.create_session(email=email)
             return jsonify({"email": email, "message": "logged in"})
         except Exception:
             abort(401)
