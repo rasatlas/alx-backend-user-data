@@ -111,7 +111,7 @@ class Auth:
         Args:
             - email (str): email of the user
         Returns:
-            - token (str): the generated restet_token
+            - new_token (str): the generated restet_token
         """
         new_token = _generate_uuid()
         try:
