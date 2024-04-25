@@ -122,8 +122,7 @@ class Auth:
             return ValueError
 
     def update_password(self, reset_token: str, password: str) -> None:
-        """
-        Implement the Auth.update_password method.
+        """Implement the Auth.update_password method.
         Args:
             - reset_token (str): The reset token used to find the
             corresponding user.
