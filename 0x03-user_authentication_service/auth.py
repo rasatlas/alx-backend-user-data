@@ -2,6 +2,7 @@
 """
 auth module
 """
+from typing import Optional
 import uuid
 import bcrypt
 from db import DB
@@ -71,3 +72,20 @@ class Auth:
             return session_id
         except Exception:
             return None
+
+    def get_user_from_session_id(self,
+                                 session_id: Optional[str]) -> Optional[User]:
+        """Retrieve the corresponding User object for the provided session ID.
+        Args:
+            - session_id (str): The session ID of the user to be retrieved.
+        Returns:
+            - User or None: If the session ID is None or no user is found,
+            return None. Otherwise, return the corresponding User object.
+        """
+        if session_id:
+            try:
+                user = self._db.find_user_by(session_id)
+                return user
+            except Exception:
+                return None
+        return None
