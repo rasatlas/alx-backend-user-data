@@ -91,5 +91,22 @@ def profile():
         abort(403)
 
 
+@app.route('/reset_password', methods=['POST'], starict_slashes=False)
+def get_reset_password_token():
+    """Respond to the POST /reset_password route
+    - The request is expected to contain form data with the 'email' field.
+    - If the email is not registered, respond with a 403 status code.
+    Otherwise, generate a token and respond with a 200 HTTP status and
+    the following JSON payload:
+        {"email": "<user email>", "reset_token": "<reset token>"}
+    """
+    email = request.form.get('email')
+    try:
+        reset_token = AUTH.get_reset_password_token(email)
+        return jsonify({"email": email, "reset_token": reset_token}), 200
+    except Exception:
+        abort(403)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
