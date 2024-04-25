@@ -119,5 +119,5 @@ class Auth:
                 new_token = _generate_uuid()
                 self._db.update_user(user.id, reset_token=new_token)
                 return new_token
-        except Exception:
+        except NoResultFound:
             return ValueError
