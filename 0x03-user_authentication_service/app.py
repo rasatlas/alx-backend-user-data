@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """A basic Flask app"""
-from flask import Flask, abort, jsonify, request
+from flask import Flask, abort, jsonify, make_response, request
 from auth import Auth
 
 app = Flask(__name__)
@@ -40,14 +40,16 @@ def login():
     """Creates a new session for the user, stores the session Id as a cookie
     with key 'session_id' on the response and return a JSON paylod to the form.
     """
-    cookie = {}
     data = request.form
     email = data.get('email')
     password = data.get('password')
     if AUTH.valid_login(email, password):
         try:
-            cookie['session_id'] = AUTH.create_session(email=email)
-            return jsonify({"email": email, "message": "logged in"})
+            session_id = AUTH.create_session(email=email)
+            response = make_response(jsonify({"email": email,
+                                              "message": "logged in"}))
+            response.set_cookie('session_id', session_id)
+            return response
         except Exception:
             abort(401)
     abort(401)
