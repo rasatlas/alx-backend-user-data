@@ -58,12 +58,14 @@ def login():
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout():
     """Function to respond to the DELETE /sessions route."""
-    session_id = request.cookies.get('session_id', None)
+    session_id = request.cookies.get('session_id')
     try:
         user = AUTH.get_user_from_session_id(session_id)
         if user:
             AUTH.destroy_session(user.id)
             return redirect('/')
+        else:
+            abort(403)
     except Exception:
         abort(403)
 
